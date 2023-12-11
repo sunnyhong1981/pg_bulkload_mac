@@ -7,6 +7,7 @@ You can load data to table bypassing PostgreSQL shared buffers.
 
 pg_bulkload also has some ETL features; input data validation and data transformation.
 
+fixed for mac
 Branches
 --------
 

@@ -187,7 +187,7 @@ CSVParserInit(CSVParser *self, Checker *checker, const char *infile, TupleDesc d
 	/*
 	 * set default values
 	 */
-	self->delim = self->delim ? self->delim : ',';
+	self->delim = self->delim ? self->delim : '\t';
 	self->quote = self->quote ? self->quote : '"';
 	self->escape = self->escape ? self->escape : '"';
 	self->null = self->null ? self->null : "";
@@ -733,7 +733,14 @@ CSVParserParam(CSVParser *self, const char *keyword, char *value)
 	if (CompareKeyword(keyword, "DELIMITER"))
 	{
 		ASSERT_ONCE(!self->delim);
-		self->delim = ParseSingleChar(value);
+		if(strlen(value)==0)
+		{
+			self->delim='\t';
+		}
+		else
+		{
+			self->delim = ParseSingleChar(value);
+		}
 	}
 	else if (CompareKeyword(keyword, "QUOTE"))
 	{

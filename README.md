@@ -9,7 +9,7 @@ pg_bulkload also has some ETL features; input data validation and data transform
 
 Branches
 --------
-
+original copy from pg_bulkload 3.2
 * master: branch for pg_bulkload 3.2 [![Test](https://github.com/ossc-db/pg_bulkload/actions/workflows/test.yml/badge.svg?branch=master&event=push)](https://github.com/ossc-db/pg_bulkload/actions/workflows/test.yml)
 
 How to use
